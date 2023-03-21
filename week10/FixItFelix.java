@@ -143,8 +143,6 @@ class Book implements BookIntreface {
         return this.rating;
     }
 
-
-
     // To string
     public String toString() {
         String output;
@@ -225,9 +223,12 @@ class PublishedBook extends Book{
 
     // To String
     public String toString() {
-        String output = "hello";
 
-        return output;
+        if (this.getPubDate() != 0) {
+            return super.toString() + " (" + this.getPubDate()  + ")";
+        } 
+
+        return super.toString();
     }
 
 }
@@ -238,9 +239,9 @@ class ReadBook extends Book {
     String rTitle;
     String rAuthor;
     int rCompDate;
-    int rRating;
+    BookRating rRating;
 
-    public ReadBook(BookGenre rGenre, String rTitle, String rAuthor, int rCompDate, int rRating) {
+    public ReadBook(BookGenre rGenre, String rTitle, String rAuthor, int rCompDate, BookRating rRating) {
         super(rTitle, rAuthor, rGenre);
         this.rCompDate = rCompDate;
         this.rRating = rRating;
@@ -263,7 +264,7 @@ class ReadBook extends Book {
         return this.rCompDate;
     }
 
-    public int getReadRating() {
+    public BookRating getReadRating() {
         return this.rRating;
     }
 
@@ -284,16 +285,18 @@ class ReadBook extends Book {
         this.rCompDate = compDate;
     }
 
-    public void setReadRting(int rating) {
+    public void setReadRting(BookRating rating) {
         this.rRating = rating;
     }
 
     // To string
     public String toString() {
-        String output = "hello2";
+        
+        if (this.getReadGenre() != null && this.getReadCompDate() != 0 && this.getReadRating() != null) {
+            return super.toString() + "( " + Integer.toString(this.getReadCompDate()) + " " + this.getReadRating() + " " + this.getReadGenre() + ")";
+        }
 
-
-        return output;
+        return super.toString();
     }
 
 }
