@@ -3,8 +3,9 @@
 
 For the CVS reader, we can do the following:
 
+<pre>
 <code> 
-    {
+
 public static String[] readCVS(String filename) {
 
     String[] lines = new String[1];
@@ -29,19 +30,19 @@ public static String[] readCVS(String filename) {
     return lines;
 
 }
-    }
+</pre>
+
 </code>
 
 In there we are returning a string array containing all the collumns of the CVS file, given that you pass the name of the CVS file.
 
 ## Other tests that can be added
-
+<pre>
 <code>
-    {
 String[] planets = readCVS("planets.csv");
 String[] species = readCVS("species.csv");
 String[] starships = readCVS("starships.csv");
 String[] vehicles = readCVS("vehicles.csv");
 String[] films = readCVS("films.csv");
-    }
 </code>
+</pre>
