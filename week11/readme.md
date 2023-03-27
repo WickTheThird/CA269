@@ -30,9 +30,8 @@ public static String[] readCVS(String filename) {
     return lines;
 
 }
-</pre>
-
 </code>
+</pre>
 
 In there we are returning a string array containing all the collumns of the CVS file, given that you pass the name of the CVS file.
 
